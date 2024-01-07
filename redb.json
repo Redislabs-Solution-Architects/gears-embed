@@ -1,0 +1,18 @@
+{
+    "name": "redb",
+    "type": "redis",
+    "memory_size": 5000000000,
+    "port": 12000,
+    "authentication_redis_pass": "redis",
+    "proxy_policy": "all-master-shards",
+    "sharding": true,
+    "shards_count": 2,
+    "shards_placement": "sparse",
+    "shard_key_regex": [{"regex": ".*\\{(?<tag>.*)\\}.*"}, {"regex": "(?<tag>.*)"}],
+    "replication": false,
+    "module_list": [
+    {
+        "module_name":"redisgears_2",
+        "module_args": "lock-redis-timeout 30000 v8-maxmemory 1073741824 v8-library-memory-usage-delta 10485760 v8-library-initial-memory-limit 3145728 v8-library-initial-memory-usage 3145728"    
+    }]
+}
