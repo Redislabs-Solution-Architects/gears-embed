@@ -6,7 +6,8 @@
   "scripts": {
     "build": "npx webpack --config webpack.config.cjs",
     "deploy_rollup": "gears-api ./src/gear.js -r redis://default:redis@192.168.20.2:12000",
-    "deploy_webpack": "npm run build;redis-cli --no-auth-warning -u redis://default:redis@192.168.20.2:12000 -x TFUNCTION LOAD REPLACE < dist/main.js"
+    "deploy_webpack": "npm run build;redis-cli --no-auth-warning -u redis://default:redis@192.168.20.2:12000 -x TFUNCTION LOAD REPLACE < dist/main.js",
+    "deploy_stack": "gears-api ./src/gear.js"
   },
   "keywords": [],
   "author": "Joey Whelan",
